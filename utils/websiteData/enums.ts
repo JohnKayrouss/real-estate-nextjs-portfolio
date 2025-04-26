@@ -116,6 +116,8 @@ export enum heroData {
 	FIRST_CONTENT_BADGE = "",
 	SECOND_CONTENT = "No hassle. Just results. ",
 	SECOND_CONTENT_BADGE = "NO FEES",
+	THIRD_CONTENT = "",
+	THIRD_CONTENT_BADGE = "",
 	FORTH_CONTENT = "From start to finish, we're by your side,",
 	FORTH_CONTENT_BADGE = "DELIVERING SUCCESSFUL OUTCOMES",
 }

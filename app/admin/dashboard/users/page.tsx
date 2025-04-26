@@ -9,7 +9,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { clerkClient } from "@clerk/nextjs/server";
+import { clerkClient, type User } from "@clerk/nextjs/server";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import { adminPageHeading, user_table } from "@/utils/websiteData/enums";
 
@@ -40,7 +40,7 @@ export default async function UsersList() {
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{users.data.map((user) => {
+					{users.data.map((user: User) => {
 						return (
 							<TableRow key={user.id}>
 								<TableCell className=' capitalize'>{user.fullName}</TableCell>
