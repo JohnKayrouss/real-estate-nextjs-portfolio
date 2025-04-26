@@ -1,0 +1,60 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+  // directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AppImages {
+  id   String @id @default(cuid()) @map("_id")
+  name String
+  url  String
+}
+
+model Image {
+  id      String @id @default(cuid()) @map("_id")
+  url     String
+  house   House  @relation(fields: [houseId], references: [id])
+  houseId String
+}
+
+model Favorite {
+  id      String @id @default(cuid()) @map("_id")
+  clerkId String
+  house   House  @relation(fields: [houseId], references: [id], onDelete: Cascade)
+  houseId String
+}
+
+model House {
+  id                 String     @id @default(cuid()) @map("_id")
+  clerkId            String
+  imagesList         Image[]
+  favorites          Favorite[]
+  thumbnail          String
+  thumbnailId        String
+  price              Int
+  address            String
+  description        String
+  baths              Float
+  beds               Float
+  sqft               Int
+  builtYear          Int
+  estPaymentPerMonth Int
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid()) @map("_id")
+  clerkId   String
+  name      String
+  userImage String
+  text      String
+  email     String
+  rating    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
