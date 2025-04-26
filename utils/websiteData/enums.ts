@@ -1,3 +1,29 @@
+export enum metadataInfo {
+	DEFAULT_TITLE = "Summit Group",
+	DEFAULT_DESCRIPTION = "Summit Group connects you to outstanding homes and investment properties, offering trusted expertise and a commitment to excellence in every step of your real estate journey.",
+	HOME = "Home",
+	HOME_DESCRIPTION = "Welcome to Summit Group — your gateway to exceptional living spaces, curated listings, and expert real estate solutions tailored to your lifestyle.",
+	SERVICES = "Services",
+	SERVICES_DESCRIPTION = "Discover a full range of real estate services with Summit Group — from buying and selling to personalized consulting, we're here to support every step of your journey.",
+
+	ABOUT = "About",
+	ABOUT_DESCRIPTION = "Learn more about Summit Group — a team driven by passion, expertise, and a commitment to helping you achieve your real estate goals with confidence and care.",
+
+	HOUSES = "Houses",
+	HOUSES_DESCRIPTION = "Browse stunning homes with Summit Group — featuring a curated selection of properties designed to match every lifestyle, need, and dream.",
+
+	SINGLE_HOUSE = "Property Details",
+	SINGLE_HOUSE_DESCRIPTION = "Explore this exceptional property with Summit Group — detailed insights, beautiful design, and everything you need to find your perfect home.",
+	ADMIN_DEFAULT_TITLE = "Admin",
+	ADMIN_DEFAULT_DESCRIPTION = "Manage Summit Group's listings, services, and site content with powerful administrative tools designed for efficiency and control.",
+	ADMIN_HOUSES = "House list",
+	ADMIN_CREATE_HOUSE = " Create house",
+	ADMIN_EDIT_HOUSE = " Edit house",
+	ADMIN_USERS_LIST = " user list",
+	ADMIN_IMAGE_SLIDER = " Image slider",
+	ADMIN_TESTIMONIALS = " Testimonials",
+}
+
 export enum ownerInfo {
 	CONTACT_HEADER = "Contact Our Team",
 	NAME = "Summit Realty Group",

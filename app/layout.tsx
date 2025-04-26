@@ -9,10 +9,11 @@ import "./globals.css";
 import DynamicFavicon from "@/components/reusable/DynamicFavicon/DynamicFavicon";
 import { appMetadata } from "@/utils/appMetadata";
 import Footer from "@/components/Footer/Footer";
+import { metadataInfo } from "@/utils/websiteData/enums";
 
 export const metadata: Metadata = {
-	title: appMetadata.defaultTitle("Home"),
-	description: appMetadata.defaultDescription(),
+	title: appMetadata.defaultTitle(metadataInfo.HOME),
+	description: appMetadata.defaultDescription(metadataInfo.HOME_DESCRIPTION),
 };
 
 export default function RootLayout({

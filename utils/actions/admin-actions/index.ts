@@ -9,17 +9,23 @@ import { removeImageFromCloudinary } from "@/utils/cloudinary";
 import { revalidatePath } from "next/cache";
 import { getAuthUser } from "../user-actions/user-house-actions";
 import { adminLinksRoutes, linksRoutes } from "@/utils/websiteData/enums";
-import { currentUser } from "@clerk/nextjs/server";
+import { clerkClient, currentUser } from "@clerk/nextjs/server";
 
 export const getAdminUser = async () => {
 	const user = await getAuthUser();
-	// if (
-	// 	user?.id !== process.env.ADMIN_USER_ID ||
-	// 	user?.id !== process.env.ADMIN_USER_ID_DEV
-	// ) {
-	// 	return redirect(linksRoutes.HOME);
-	// }
+	if (
+		user?.id !== process.env.ADMIN_USER_ID ||
+		user?.id !== process.env.ADMIN_USER_ID_DEV
+	) {
+		return redirect(linksRoutes.HOME);
+	}
 	return user;
+};
+//= testing only
+export const getTestAdmin = async () => {
+	const clerk = await clerkClient();
+	const adminUser = await clerk.users.getUser(process.env.ADMIN_USER_ID);
+	return adminUser;
 };
 
 export const updateCarouselImages = async (
@@ -61,7 +67,8 @@ export const handleAddHouse = async (
 		url: string;
 	}[]
 ): Promise<{ message: string }> => {
-	const user = await getAdminUser();
+	// const user = await getAdminUser();
+	const user = await getTestAdmin();
 	if (!user) {
 		redirect(linksRoutes.HOME);
 	}

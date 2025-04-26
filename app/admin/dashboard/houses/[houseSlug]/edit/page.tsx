@@ -1,11 +1,14 @@
 import { adminEditHouse } from "@/utils/actions/admin-actions";
 import EditHouseForm from "./_components/EditHouseForm";
 
-// type Props = {
-// 	params: Promise<{
-// 		houseSlug: string;
-// 	}>;
-// };
+import { AdminMetadata } from "@/utils/appMetadata";
+import { metadataInfo } from "@/utils/websiteData/enums";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_EDIT_HOUSE),
+	description: AdminMetadata.defaultDescription(),
+};
 type Props = {
 	params: Promise<{
 		houseSlug: string;
