@@ -7,7 +7,6 @@ import { getTestAdmin } from "@/utils/actions/admin-actions";
 
 const HomePage = async () => {
 	const admin = await getTestAdmin();
-	console.log("admin ===== ", admin.fullName);
 	return (
 		<main className=''>
 			<Hero />
