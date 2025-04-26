@@ -24,7 +24,9 @@ export const getAdminUser = async () => {
 //= testing only
 export const getTestAdmin = async () => {
 	const clerk = await clerkClient();
-	const adminUser = await clerk.users.getUser(process.env.ADMIN_USER_ID!);
+	const adminUser = await clerk.users.getUser(
+		"user_2wEseM2u3BXVkkoviFJQe5fxxgo"
+	);
 	return adminUser;
 };
 
