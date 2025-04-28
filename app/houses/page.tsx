@@ -11,10 +11,10 @@ import {
 	metadataInfo,
 } from "@/utils/websiteData/enums";
 
-export const metadata: Metadata = {
-	title: appMetadata.defaultTitle(metadataInfo.HOUSES),
-	description: appMetadata.defaultDescription(metadataInfo.HOUSES),
-};
+// export const metadata: Metadata = {
+// 	title: appMetadata.defaultTitle(metadataInfo.HOUSES),
+// 	description: appMetadata.defaultDescription(metadataInfo.HOUSES),
+// };
 
 export default async function HousesPage() {
 	const housesList = await fetchAllHouses();
