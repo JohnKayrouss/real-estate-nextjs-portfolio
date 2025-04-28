@@ -1,22 +1,15 @@
-import { metadataInfo } from "./websiteData/enums";
+const PageMainHeader = "Ayman Karam ";
+
+const pageMainDescription =
+	"Find your next home with Ayman Karam - premium real estate listings, expert guidance, and a smooth property experience.";
 
 export const appMetadata = {
 	defaultTitle: (title: string) => {
-		return `${metadataInfo.DEFAULT_TITLE} | ${title}`;
+		return `${PageMainHeader} | ${title}`;
 	},
 	defaultDescription: (content?: string) => {
 		return content
-			? `${content} - ${metadataInfo.DEFAULT_DESCRIPTION}`
-			: metadataInfo.DEFAULT_DESCRIPTION;
-	},
-};
-export const AdminMetadata = {
-	defaultTitle: (title: string) => {
-		return `${metadataInfo.ADMIN_DEFAULT_TITLE} | ${title}`;
-	},
-	defaultDescription: (content?: string) => {
-		return content
-			? `${content} - ${metadataInfo.ADMIN_DEFAULT_DESCRIPTION}`
-			: metadataInfo.ADMIN_DEFAULT_DESCRIPTION;
+			? `${content} - ${pageMainDescription}`
+			: pageMainDescription;
 	},
 };

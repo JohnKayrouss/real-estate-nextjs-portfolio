@@ -56,9 +56,9 @@ export default function CloudinaryImagesList({
 									className='rounded-sm object-cover '
 								/>
 								<div
-									className='dark:bg-background bg-primary cursor-pointer absolute p-2 rounded-full -top-4 -right-2 md:-top-6 md:-right-3'
+									className='bg-background cursor-pointer absolute p-2 rounded-full -top-4 -right-2 md:-top-6 md:-right-3'
 									onClick={(e) => removeImage(e, image.id)}>
-									<Trash className='dark:text-destructive w-4 h-4 text-white' />
+									<Trash className='dark:text-destructive w-4 h-4' />
 								</div>
 							</div>
 						);

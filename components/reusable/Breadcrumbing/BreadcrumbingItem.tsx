@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
 	BreadcrumbItem,
+	BreadcrumbLink,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";

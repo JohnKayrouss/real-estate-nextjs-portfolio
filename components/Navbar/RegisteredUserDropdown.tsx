@@ -23,7 +23,6 @@ import { linksLabels, linksRoutes, userLinks } from "@/utils/websiteData/enums";
 export async function RegisteredUserDropdown({ user }: { user: User }) {
 	const userFullName = slugify(user.fullName as string, { lower: true });
 	const userIsAdmin = await isAdmin();
-
 	const navLinks = links.map((item) => {
 		if (item.label === linksLabels.DASHBOARD && !userIsAdmin) return null;
 		const itemUrl =

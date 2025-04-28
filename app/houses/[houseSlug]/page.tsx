@@ -7,18 +7,12 @@ import { Metadata } from "next";
 import { appMetadata } from "@/utils/appMetadata";
 import { notFound } from "next/navigation";
 import { Breadcrumbing } from "@/components/reusable/Breadcrumbing/Breadcrumbing";
-import {
-	linksLabels,
-	linksRoutes,
-	metadataInfo,
-} from "@/utils/websiteData/enums";
+import { linksLabels, linksRoutes } from "@/utils/websiteData/enums";
 
 export async function generateMetadata(): Promise<Metadata> {
 	return {
-		title: metadataInfo.SINGLE_HOUSE,
-		description: appMetadata.defaultDescription(
-			metadataInfo.SINGLE_HOUSE_DESCRIPTION
-		),
+		title: appMetadata.defaultTitle("Houses"),
+		description: appMetadata.defaultDescription(),
 	};
 }
 

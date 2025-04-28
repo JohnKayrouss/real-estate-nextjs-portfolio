@@ -4,13 +4,12 @@ import { useAuth } from "@clerk/clerk-react";
 
 //= checking if user is logged in as admin
 export const isAdmin = async (): Promise<boolean> => {
-	//checking if admin
-	// const { userId } = await auth();
-	// if (!userId) return false;
-	// const userIsAdmin =
-	// 	userId === process.env.ADMIN_USER_ID ||
-	// 	userId === process.env.ADMIN_USER_ID_DEV;
-	return true;
+	const { userId } = await auth();
+	if (!userId) return false;
+	const userIsAdmin =
+		userId === process.env.ADMIN_USER_ID ||
+		userId === process.env.ADMIN_USER_ID_DEV;
+	return userIsAdmin;
 };
 
 //= adding commas to numbers

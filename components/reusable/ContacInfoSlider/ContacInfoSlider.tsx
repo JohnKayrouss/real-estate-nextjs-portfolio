@@ -3,13 +3,23 @@ import { Button } from "@/components/ui/button";
 import {
 	Sheet,
 	SheetContent,
+	SheetDescription,
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
 	SheetClose,
 } from "@/components/ui/sheet";
 import { btns, ownerInfo } from "@/utils/websiteData/enums";
-import { MailOpen, Phone, PhoneCall, UserCheck } from "lucide-react";
+import {
+	Facebook,
+	Instagram,
+	Mail,
+	MailOpen,
+	Phone,
+	PhoneCall,
+	Twitter,
+	UserCheck,
+} from "lucide-react";
 export default function ContacInfoSlider({
 	contactBtnName,
 }: {

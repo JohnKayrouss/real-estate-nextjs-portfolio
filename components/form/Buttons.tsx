@@ -1,4 +1,5 @@
 "use client";
+import React, { Children } from "react";
 import { useFormStatus } from "react-dom";
 import { FilePenLine, Trash } from "lucide-react";
 
@@ -61,7 +62,7 @@ export function IconButton({
 	const renderIcon = () => {
 		switch (actionType) {
 			case "edit":
-				return <FilePenLine className='w-4 ' />;
+				return <FilePenLine className='w-4' />;
 			case "delete":
 				return <Trash className='w-4' />;
 			default:

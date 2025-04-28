@@ -116,7 +116,8 @@ export default function EditHouseForm({
 					<TextareaInput
 						name='description'
 						label='description'
-						defaultValue={description}
+						defaultValue='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, adipisci!
+				'
 					/>
 				</FormRow>
 				<SubmitButton type='update' />

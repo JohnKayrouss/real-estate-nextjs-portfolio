@@ -1,4 +1,4 @@
-import { linksRoutes, ownerInfo } from "@/utils/websiteData/enums";
+import { linksRoutes } from "@/utils/websiteData/enums";
 
 export const footerAboutSection = [
 	{ text: "Education", href: linksRoutes.ABOUT },
@@ -18,7 +18,7 @@ export const footerOurPhilosophySection = [
 	{ text: "Best deal that suits you", href: linksRoutes.HOME },
 ];
 export const footerContactUsSection = [
-	{ text: ownerInfo.EMAIL, href: linksRoutes.HOME },
-	{ text: ownerInfo.PHONE, href: linksRoutes.HOME },
+	{ text: "aymankaram2000@gmail.com", href: linksRoutes.HOME },
+	{ text: "Phone: +1 804 349 8813", href: linksRoutes.HOME },
 	{ text: "Richmond, VA", href: linksRoutes.HOME },
 ];

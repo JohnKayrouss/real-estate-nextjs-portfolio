@@ -4,7 +4,7 @@ import Empty from "@/components/reusable/Empty/Empty";
 import HousesGridList from "@/app/houses/_components/HousesGridList";
 import { Metadata } from "next";
 import { appMetadata } from "@/utils/appMetadata";
-// import { headers } from "next/headers";
+import { headers } from "next/headers";
 import { fetchUserFavoritesHouses } from "@/utils/actions/user-actions/user-house-actions";
 import { linksRoutes } from "@/utils/websiteData/enums";
 
@@ -32,8 +32,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function UserFavoritesPage() {
 	const user = await currentUser();
 	if (!user) redirect(linksRoutes.HOME);
-	// const headersList = headers();
-	const userFavList = await fetchUserFavoritesHouses(user.id as string);
+	const headersList = headers();
+	const csp = (await headersList).get("content-security-policy");
+	const userFavList = await fetchUserFavoritesHouses(user?.id as string);
 
 	return (
 		<div className='px-4 max-w-7xl mx-auto'>

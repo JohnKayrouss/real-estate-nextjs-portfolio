@@ -1,5 +1,7 @@
 import { User } from "@clerk/nextjs/server";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+//max-w-96 md:max-w-3xl lg:max-w-3xl xl:max-w-7xl
 export default function UserInfo({ user }: { user: User }) {
 	return (
 		<>

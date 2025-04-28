@@ -6,6 +6,7 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { Share2 } from "lucide-react";
+import { LuShare2 } from "react-icons/lu";
 
 import {
 	TwitterShareButton,
@@ -28,6 +29,7 @@ export default function ShareButton({
 	const url = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 	const shareUrl = `${url}/houses/${houseId}`;
+	const shareTitle = "Check out this house";
 	return (
 		<Popover>
 			<PopoverTrigger asChild>

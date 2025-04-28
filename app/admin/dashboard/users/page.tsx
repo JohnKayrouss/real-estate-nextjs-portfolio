@@ -9,18 +9,10 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { clerkClient, type User } from "@clerk/nextjs/server";
+import { clerkClient } from "@clerk/nextjs/server";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import { adminPageHeading, user_table } from "@/utils/websiteData/enums";
 
-import { AdminMetadata } from "@/utils/appMetadata";
-import { metadataInfo } from "@/utils/websiteData/enums";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_USERS_LIST),
-	description: AdminMetadata.defaultDescription(),
-};
 export default async function UsersList() {
 	const clerk = await clerkClient();
 	const users = await clerk.users.getUserList();
@@ -48,26 +40,23 @@ export default async function UsersList() {
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{users.data.map((user: User) => {
+					{users.data.map((user) => {
 						return (
 							<TableRow key={user.id}>
-								<TableCell className=' capitalize'>Username</TableCell>
+								<TableCell className=' capitalize'>{user.fullName}</TableCell>
 								<TableCell className='hidden md:table-cell capitalize'>
-									firstname
+									{user.firstName}
 								</TableCell>
 								<TableCell className='hidden md:table-cell '>
-									lastname
+									{user.lastName}
 								</TableCell>
 								<TableCell className='hidden sm:table-cell '>
-									user@email.com
+									{user.primaryEmailAddress?.emailAddress}
 								</TableCell>
 								<TableCell className='flex justify-end'>
 									<Avatar>
-										<AvatarImage
-											src='https://github.com/shadcn.png'
-											alt='@shadcn'
-										/>
-										<AvatarFallback></AvatarFallback>
+										<AvatarImage src={user.imageUrl} alt='user' />
+										<AvatarFallback className='animate-pulse'></AvatarFallback>
 									</Avatar>
 								</TableCell>
 							</TableRow>
@@ -78,8 +67,10 @@ export default async function UsersList() {
 					<TableRow>
 						<TableCell colSpan={5} className='text-center text-md'>
 							You have
-							<span className='text-primary font-semibold text-md mx-1'>X</span>
-							number of users
+							<span className='text-primary font-semibold text-md mx-1'>
+								{users.totalCount}
+							</span>
+							users
 						</TableCell>
 					</TableRow>
 				</TableFooter>

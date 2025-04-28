@@ -10,7 +10,7 @@ export default function SelfSection() {
 			<SectionHeader heading={SelfSectionData.HEADER} />
 			<div className='grid py-10 grid-cols-1 md:grid-cols-2 '>
 				<div className=' flex flex-col items-center md:items-start  md:w-[300px] md:pl-10 lg:w-[400px] xl:w-[500px] 2xl:w-[700px] lg:items-center '>
-					<div className=' w-[23rem] md:w-52 mt-10 xl:w-72 2xl:w-[23rem]  '>
+					<div className=' w-80  md:w-48 xl:w-72 2xl:w-80  '>
 						<Image
 							src={selfImg}
 							alt='image'

@@ -7,7 +7,7 @@ import { toast } from "sonner";
 export default function SignOutBtn() {
 	const handleLogout = () => {
 		toast("You have been signed out.", {
-			style: { color: "#f97316" },
+			style: { color: "#3d82f6" },
 		});
 	};
 	return (

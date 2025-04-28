@@ -13,14 +13,6 @@ import Rating from "@/components/Testimonials/Rating";
 import DeleteTestimony from "@/app/user-profile/_components/DeleteTestimony";
 import TestimonyPopup from "./_components/TestimonyPopup";
 import { adminPageHeading } from "@/utils/websiteData/enums";
-import { AdminMetadata } from "@/utils/appMetadata";
-import { metadataInfo } from "@/utils/websiteData/enums";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_TESTIMONIALS),
-	description: AdminMetadata.defaultDescription(),
-};
 export default async function AdminTestimonialsPage() {
 	const testimonialList = await fetchAllTestimonials();
 	return (
@@ -44,7 +36,8 @@ export default async function AdminTestimonialsPage() {
 				</TableHeader>
 				<TableBody>
 					{testimonialList.map((testimonial) => {
-						const { email, id, rating, clerkId } = testimonial;
+						const { name, email, text, id, rating, clerkId, userImage } =
+							testimonial;
 
 						return (
 							<TableRow key={id}>

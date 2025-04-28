@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logoImg from "@/public/images/house.svg";
+import logoImg from "@/public/images/footerLogo.png";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import { footerData } from "@/utils/websiteData/enums";
 

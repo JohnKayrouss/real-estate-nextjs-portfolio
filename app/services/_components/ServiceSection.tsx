@@ -1,5 +1,4 @@
 import ContacInfoSlider from "@/components/reusable/ContacInfoSlider/ContacInfoSlider";
-import Image from "next/image";
 
 type ServiceSectionProps = {
 	title: string;
@@ -31,13 +30,7 @@ export default function ServiceSection({
 						</div>
 					</div>
 					<div className={imageOnLeft ? "md:order-1" : "md:order-2"}>
-						<Image
-							src={imageUrl}
-							className='rounded'
-							alt='service'
-							width={500}
-							height={500}
-						/>
+						<img src={imageUrl} className='rounded' alt='service' />
 					</div>
 				</div>
 			</div>

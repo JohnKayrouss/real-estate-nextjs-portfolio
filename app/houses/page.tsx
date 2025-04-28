@@ -5,16 +5,12 @@ import { appMetadata } from "@/utils/appMetadata";
 import Empty from "@/components/reusable/Empty/Empty";
 import { Breadcrumbing } from "@/components/reusable/Breadcrumbing/Breadcrumbing";
 import { fetchAllHouses } from "@/utils/actions/house-actions";
-import {
-	linksLabels,
-	linksRoutes,
-	metadataInfo,
-} from "@/utils/websiteData/enums";
+import { linksLabels, linksRoutes } from "@/utils/websiteData/enums";
 
-// export const metadata: Metadata = {
-// 	title: appMetadata.defaultTitle(metadataInfo.HOUSES),
-// 	description: appMetadata.defaultDescription(metadataInfo.HOUSES),
-// };
+export const metadata: Metadata = {
+	title: appMetadata.defaultTitle("Houses"),
+	description: appMetadata.defaultDescription(),
+};
 
 export default async function HousesPage() {
 	const housesList = await fetchAllHouses();
