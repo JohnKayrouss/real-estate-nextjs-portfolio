@@ -7,15 +7,20 @@ const isPublicRoute = createRouteMatcher([
 	"/services",
 	"/houses/(.*)",
 	"/houses",
-	"/admin/(.*)",
+	"/admin(.*)",
+	"/admin/dashboard/(.*)",
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
-	if (!isPublicRoute(req)) {
-		auth.protect();
+	if (isPublicRoute(req)) {
+		return NextResponse.next(); // Allow public access
 	}
+	auth.protect(); // Protect non-public routes
 });
 
 export const config = {
-	matcher: ["/((?!_next|.*\\..*).*)"], // matches everything except _next/ and files like .png, .jpg
+	matcher: [
+		"/((?!_next/static|_next/image|favicon.ico).*)", // Better static exclusion
+		"/admin(.*)", // Explicit admin route matching
+	],
 };
