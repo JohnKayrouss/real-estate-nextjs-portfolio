@@ -6,10 +6,10 @@ import DynamicFavicon from "@/components/reusable/DynamicFavicon/DynamicFavicon"
 import { AdminMetadata } from "@/utils/appMetadata";
 import { metadataInfo } from "@/utils/websiteData/enums";
 
-export const metadata: Metadata = {
-	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_HOUSES),
-	description: AdminMetadata.defaultDescription(),
-};
+// export const metadata: Metadata = {
+// 	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_HOUSES),
+// 	description: AdminMetadata.defaultDescription(),
+// };
 export default function layout({ children }: { children: React.ReactNode }) {
 	return (
 		<main className='pt-28 '>
