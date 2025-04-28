@@ -15,7 +15,6 @@ type Props = {
 		userImage: string;
 	};
 };
-const initialState = { message: "" };
 export default function TestimonialForm({ testimonialUserData }: Props) {
 	const { clerkId, name, email, userImage } = testimonialUserData;
 	const createAction = async (

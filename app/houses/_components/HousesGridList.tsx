@@ -11,7 +11,6 @@ type HousesGridListProps = {
 	housesList: HouseWithImagesAndFavorites[];
 };
 
-type houseListProps = HouseWithImagesAndFavorites[];
 export default async function HousesGridList({
 	housesList,
 }: HousesGridListProps) {

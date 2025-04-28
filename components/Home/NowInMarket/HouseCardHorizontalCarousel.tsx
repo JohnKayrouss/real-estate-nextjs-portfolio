@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { type House } from "@prisma/client";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import Link from "next/link";

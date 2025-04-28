@@ -9,7 +9,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { IconButton } from "@/components/form/Buttons";
 import { Testimonial } from "@prisma/client";
-import { Star } from "lucide-react";
 import DeleteTestimony from "./DeleteTestimony";
 import Link from "next/link";
 import slugify from "slugify";

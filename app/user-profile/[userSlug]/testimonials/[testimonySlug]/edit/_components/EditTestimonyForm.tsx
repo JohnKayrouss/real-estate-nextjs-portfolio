@@ -17,7 +17,7 @@ type Props = {
 
 export default function EditTestimonyForm({ testimonial }: Props) {
 	if (!testimonial) redirect(linksRoutes.HOME);
-	const { id, name, rating, text, clerkId, email, userImage } = testimonial;
+	const { id, rating, text, clerkId } = testimonial;
 	const updateAction = async (
 		prevState: { message: string },
 		formData: FormData

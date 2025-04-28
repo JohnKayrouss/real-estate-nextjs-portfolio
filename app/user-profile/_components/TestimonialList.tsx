@@ -1,13 +1,3 @@
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { IconButton } from "@/components/form/Buttons";
 import { Testimonial } from "@prisma/client";
 import TestimonialCard from "./TestimonialCard";
 import Empty from "@/components/reusable/Empty/Empty";

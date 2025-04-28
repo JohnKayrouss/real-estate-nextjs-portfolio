@@ -24,7 +24,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
 					</h2>
 					<p>Now you can try out all the operations on the admin dashboard.</p>
 					<p>Sign up to explore the profile page I created for you </p>
-					<p>it's a whole new experience!</p>
+					<p>it is a whole new experience!</p>
 				</div>
 				<AdminSideMenu />
 			</div>

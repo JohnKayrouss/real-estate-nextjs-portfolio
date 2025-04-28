@@ -1,5 +1,7 @@
 import { User } from "lucide-react";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 type userIconProps = {
 	RegisteredUserImage?: string;
 	publicUser?: boolean;
@@ -10,11 +12,10 @@ export default async function UserIcon({
 }: userIconProps) {
 	if (RegisteredUserImage) {
 		return (
-			<img
-				src={RegisteredUserImage}
-				alt=''
-				className='h-5 w-5 rounded-full object-cover'
-			/>
+			<Avatar className='h-5 w-5 rounded-full object-cover'>
+				<AvatarImage src={RegisteredUserImage} alt='user image' />
+				<AvatarFallback />
+			</Avatar>
 		);
 	}
 	if (publicUser) {

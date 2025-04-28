@@ -44,8 +44,7 @@ export default async function AdminTestimonialsPage() {
 				</TableHeader>
 				<TableBody>
 					{testimonialList.map((testimonial) => {
-						const { name, email, text, id, rating, clerkId, userImage } =
-							testimonial;
+						const { email, id, rating, clerkId } = testimonial;
 
 						return (
 							<TableRow key={id}>

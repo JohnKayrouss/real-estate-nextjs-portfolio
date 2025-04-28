@@ -5,9 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { THouseWithImages } from "@/utils/types";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { House, Image as TImage } from "@prisma/client";
 
-type THouseData = House & TImage[];
 export default function ImageStage({
 	houseData,
 }: {

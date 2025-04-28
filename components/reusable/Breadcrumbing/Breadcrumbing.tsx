@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Breadcrumb, BreadcrumbList } from "@/components/ui/breadcrumb";
 import BreadcrumbingItem from "./BreadcrumbingItem";
 import { TBreadcrumbPath } from "@/utils/types";
@@ -9,9 +7,6 @@ type BreadcrumbingProps = {
 };
 
 export function Breadcrumbing({ breadcrumbPaths }: BreadcrumbingProps) {
-	const isCurrentHouse = breadcrumbPaths.find(
-		(house) => house.currentHousePage
-	);
 	const breadcrumbings = breadcrumbPaths.map((house) => {
 		return <BreadcrumbingItem {...house} key={crypto.randomUUID()} />;
 	});

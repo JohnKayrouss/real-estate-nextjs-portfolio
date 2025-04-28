@@ -3,7 +3,6 @@ import FavoriteToggleFormState from "./FavoriteToggleFormState";
 export default function FavoriteToggleForm({
 	pathname,
 	houseId,
-	favoriteId,
 }: {
 	pathname: string;
 	houseId: string;
@@ -11,11 +10,7 @@ export default function FavoriteToggleForm({
 }) {
 	return (
 		<div>
-			<FavoriteToggleFormState
-				pathname={pathname}
-				houseId={houseId}
-				// favoriteId={favoriteId}
-			/>
+			<FavoriteToggleFormState pathname={pathname} houseId={houseId} />
 		</div>
 	);
 }
