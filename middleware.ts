@@ -8,21 +8,10 @@ const isPublicRoute = createRouteMatcher([
 	"/houses/(.*)",
 	"/houses",
 ]);
-const isAdminRoute = createRouteMatcher(["/admin/(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
-	const { userId } = await auth();
-
-	// const userIsAdmin =
-	// 	userId === process.env.ADMIN_USER_ID ||
-	// 	userId === process.env.ADMIN_USER_ID_DEV;
-	const userIsAdmin = true;
-
 	if (!isPublicRoute(req)) {
 		auth.protect();
-	}
-	if (!userIsAdmin && isAdminRoute(req)) {
-		return NextResponse.redirect(new URL("/", req.url));
 	}
 });
 
