@@ -25,7 +25,7 @@ export default function NavBarLink({ href, linkName, user }: NavBarLinkProps) {
 				<Link
 					href={href}
 					className='text-black dark:text-white font-semibold lg:text-lg transition hover:text-primary hover:dark:text-primary'>
-					{linkName}
+					{linkName} - hello
 				</Link>
 			)}
 		</li>
