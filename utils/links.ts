@@ -16,7 +16,7 @@ export const links: NavLinks[] = [
 	{ label: linksLabels.SERVICES, url: linksRoutes.SERVICES },
 	{ label: linksLabels.ABOUT, url: linksRoutes.ABOUT },
 	// { label: linksLabels.DASHBOARD, url: linksRoutes.DASHBOARD },
-	{ label: linksLabels.DASHBOARD, url: "/admin/dashboard/houses" },
+	{ label: linksLabels.DASHBOARD, url: "/admin/dashboard/hamada" },
 ];
 
 export const adminLinks: NavLinks[] = [
