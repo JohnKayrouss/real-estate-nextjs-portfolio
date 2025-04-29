@@ -14,6 +14,7 @@ type Props = {
 
 export default async function AdminEditProductPage({ params }: Props) {
 	const { houseSlug } = await params;
+	console.log("houseSlug ==== ", houseSlug);
 	const houseInfo = await adminEditHouse(houseSlug);
 	return <EditHouseForm houseInfo={houseInfo} />;
 }
