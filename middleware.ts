@@ -8,18 +8,18 @@ const isPublicRoute = createRouteMatcher([
 	"/houses/(.*)",
 	"/houses",
 ]);
-const isAdminRoute = createRouteMatcher(["/control/(.*)"]);
+// const isAdminRoute = createRouteMatcher(["/control/(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
 	if (!isPublicRoute(req)) {
 		await auth.protect();
 	}
-	const { userId } = await auth();
-	const userIsAdmin = userId === process.env.ADMIN_USER_ID;
+	// const { userId } = await auth();
+	// const userIsAdmin = userId === process.env.ADMIN_USER_ID;
 
-	if (!userIsAdmin && isAdminRoute(req)) {
-		return NextResponse.redirect(new URL("/", req.url));
-	}
+	// if (!userIsAdmin && isAdminRoute(req)) {
+	// 	return NextResponse.redirect(new URL("/", req.url));
+	// }
 });
 
 export const config = {
