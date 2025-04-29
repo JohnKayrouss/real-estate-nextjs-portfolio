@@ -54,7 +54,7 @@ export default async function HousesDashboard() {
 								</TableCell>
 								<TableCell className='text-right text-primary p-0 m-0'>
 									<div className='flex justify-end '>
-										<Link href={`/admin/dashboard/houses/${id}/edit`}>
+										<Link href={`/control/admin/dashboard/houses/${id}/edit`}>
 											<IconButton actionType='edit' />
 										</Link>
 										<DeleteHouse houseId={id} />

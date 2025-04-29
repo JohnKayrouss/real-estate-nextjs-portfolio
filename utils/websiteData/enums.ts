@@ -73,7 +73,7 @@ export enum linksRoutes {
 	HOUSES = "/houses",
 	SERVICES = "/services",
 	ABOUT = "/about",
-	DASHBOARD = "/admin/dashboard/houses",
+	DASHBOARD = "/control/admin/dashboard/houses",
 }
 
 export enum adminLinksLabels {
@@ -84,11 +84,11 @@ export enum adminLinksLabels {
 	TESTIMONIALS = "testimonials",
 }
 export enum adminLinksRoutes {
-	HOUSES = "/admin/dashboard/houses",
-	CREATE_HOUSE = "/admin/dashboard/houses/create",
-	USERS_LIST = "/admin/dashboard/users",
-	IMAGE_SLIDER = "/admin/dashboard/image-slider",
-	TESTIMONIALS = "/admin/dashboard/testimonials",
+	HOUSES = "/control/admin/dashboard/houses",
+	CREATE_HOUSE = "/control/admin/dashboard/houses/create",
+	USERS_LIST = "/control/admin/dashboard/users",
+	IMAGE_SLIDER = "/control/admin/dashboard/image-slider",
+	TESTIMONIALS = "/control/admin/dashboard/testimonials",
 }
 
 export enum adminPageHeading {
