@@ -36,7 +36,7 @@ export default function AdminHouseList() {
 		};
 
 		fetchData();
-	}, []);
+	}, [housesList]);
 
 	return (
 		<DashboardSectionWrapperWithHeader
