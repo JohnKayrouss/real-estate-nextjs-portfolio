@@ -45,7 +45,7 @@ export default function CloudinaryImagesList({
 					{imagesList.map((image) => {
 						return (
 							<div
-								key={crypto.randomUUID()}
+								key={image.id}
 								className='relative w-44 h-36 md:w-52 md:h-40 rounded-md shrink-0 '>
 								<Image
 									src={image.url}

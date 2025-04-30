@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/table";
 import Link from "next/link";
 import { numberWithCommas } from "@/utils/helperFunctions";
-import FormContainer from "@/components/form/FormContainer";
 import { IconButton } from "@/components/form/Buttons";
 import DashboardSectionWrapperWithHeader from "@/components/admin/DashboardSectionWrapperWithHeader";
 import {
@@ -20,6 +19,8 @@ import {
 import { adminPageHeading } from "@/utils/websiteData/enums";
 import { THouse, TImage } from "@/utils/types";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { DeleteHouse } from "./DeleteHouse";
 
 type HouseWithImagesAndFavorites = THouse & {
 	imagesList: TImage[];
@@ -29,14 +30,16 @@ export default function AdminHouseList() {
 	const [housesList, setHouseList] = useState<HouseWithImagesAndFavorites[]>(
 		[]
 	);
+
+	const [refresh, setRefresh] = useState(false);
 	useEffect(() => {
 		const fetchData = async () => {
 			const data = await fetchAdminHousesList();
-			setHouseList(data);
+			setHouseList([...data]);
+			setRefresh(false);
 		};
-
 		fetchData();
-	}, [housesList]);
+	}, [refresh]);
 
 	return (
 		<DashboardSectionWrapperWithHeader
@@ -74,7 +77,9 @@ export default function AdminHouseList() {
 										<Link href={`/control/admin/dashboard/houses/${id}/edit`}>
 											<IconButton actionType='edit' />
 										</Link>
-										<DeleteHouse houseId={id} />
+										<div onClick={() => setRefresh(true)}>
+											<DeleteHouse houseId={id} />
+										</div>
 									</div>
 								</TableCell>
 							</TableRow>
@@ -95,14 +100,5 @@ export default function AdminHouseList() {
 				</TableFooter>
 			</Table>
 		</DashboardSectionWrapperWithHeader>
-	);
-}
-
-function DeleteHouse({ houseId }: { houseId: string }) {
-	const deleteHouse = adminDeleteHouse.bind(null, { houseId });
-	return (
-		<FormContainer action={deleteHouse}>
-			<IconButton actionType='delete' className='text-destructive' />
-		</FormContainer>
 	);
 }
