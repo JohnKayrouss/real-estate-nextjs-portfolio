@@ -21,22 +21,22 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<ClerkProvider>
-			<html lang='en' suppressHydrationWarning>
-				<body className={`${inter.className} `} suppressHydrationWarning>
-					<DynamicFavicon />
-					<Providers>
-						<Navbar />
-						<div
-							className={cn(
-								" lg:w-[90%]  mx-auto max-w-screen-2xl min-h-[calc(100vh-81px)] "
-							)}>
-							{children}
-						</div>
-						<Footer />
-					</Providers>
-				</body>
-			</html>
-		</ClerkProvider>
+		// <ClerkProvider>
+		<html lang='en' suppressHydrationWarning>
+			<body className={`${inter.className} `} suppressHydrationWarning>
+				<DynamicFavicon />
+				<Providers>
+					<Navbar />
+					<div
+						className={cn(
+							" lg:w-[90%]  mx-auto max-w-screen-2xl min-h-[calc(100vh-81px)] "
+						)}>
+						{children}
+					</div>
+					<Footer />
+				</Providers>
+			</body>
+		</html>
+		// </ClerkProvider>
 	);
 }
