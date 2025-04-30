@@ -15,7 +15,7 @@ import { linksLabels, sessionBtns } from "@/utils/websiteData/enums";
 
 export async function PublicUserDropdown() {
 	const navLinks = links.map((item) => {
-		if (item.label === linksLabels.DASHBOARD) return null;
+		// if (item.label === linksLabels.DASHBOARD) return null;
 		return (
 			<div className='cursor-pointer' key={item.url}>
 				{item.label === "Profile" ? (
