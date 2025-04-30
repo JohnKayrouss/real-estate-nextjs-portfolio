@@ -7,6 +7,7 @@ const isPublicRoute = createRouteMatcher([
 	"/services",
 	"/houses/(.*)",
 	"/houses",
+	"/control/(.*)",
 ]);
 // const isAdminRoute = createRouteMatcher(["/control/(.*)"]);
 
