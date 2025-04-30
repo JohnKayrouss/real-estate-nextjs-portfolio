@@ -19,7 +19,7 @@ export default function NavBarLink({ href, linkName, user }: NavBarLinkProps) {
 				</Link>
 			) : linkName === linksLabels.PROFILE && !user?.id ? (
 				<div className='text-black dark:text-white font-semibold lg:text-lg transition hover:text-primary hover:dark:text-primary'>
-					{/* <SignInButton mode='modal'>{linksLabels.PROFILE}</SignInButton> */}
+					<SignInButton mode='modal'>{linksLabels.PROFILE}</SignInButton>
 				</div>
 			) : (
 				<Link
