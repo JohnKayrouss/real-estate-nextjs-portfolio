@@ -1,4 +1,3 @@
-import { adminEditHouse } from "@/utils/actions/admin-actions";
 import EditHouseForm from "./_components/EditHouseForm";
 import { Metadata } from "next";
 import { metadataInfo } from "@/utils/websiteData/enums";
@@ -16,6 +15,5 @@ type Props = {
 
 export default async function AdminEditProductPage({ params }: Props) {
 	const { houseSlug } = await params;
-	const houseInfo = await adminEditHouse(houseSlug);
 	return <EditHouseForm houseSlug={houseSlug} />;
 }
