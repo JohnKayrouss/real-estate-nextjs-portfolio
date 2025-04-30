@@ -73,9 +73,7 @@ export const deleteUserTestimony = async (
 ): Promise<{ message: string }> => {
 	const user = await currentUser();
 	const isOwner = clerkId === user?.id;
-	const isAdmin =
-		user?.id === process.env.ADMIN_USER_ID ||
-		user?.id === process.env.ADMIN_USER_ID_DEV;
+	const isAdmin = user?.id === process.env.ADMIN_USER_ID;
 	if (!isOwner && !isAdmin) {
 		return { message: "Unauthorized" };
 	}

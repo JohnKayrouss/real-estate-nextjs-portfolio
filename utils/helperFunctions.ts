@@ -6,9 +6,7 @@ import { useAuth } from "@clerk/clerk-react";
 export const isAdmin = async (): Promise<boolean> => {
 	const { userId } = await auth();
 	if (!userId) return false;
-	const userIsAdmin =
-		userId === process.env.ADMIN_USER_ID ||
-		userId === process.env.ADMIN_USER_ID_DEV;
+	const userIsAdmin = userId === process.env.ADMIN_USER_ID;
 	return userIsAdmin;
 };
 

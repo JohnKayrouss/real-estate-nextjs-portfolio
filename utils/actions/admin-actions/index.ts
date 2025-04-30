@@ -12,10 +12,7 @@ import { adminLinksRoutes, linksRoutes } from "@/utils/websiteData/enums";
 
 export const getAdminUser = async () => {
 	const user = await getAuthUser();
-	if (
-		user?.id !== process.env.ADMIN_USER_ID ||
-		user?.id !== process.env.ADMIN_USER_ID_DEV
-	) {
+	if (user?.id !== process.env.ADMIN_USER_ID) {
 		return redirect(linksRoutes.HOME);
 	}
 	return user;
