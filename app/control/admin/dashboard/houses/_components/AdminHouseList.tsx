@@ -18,8 +18,7 @@ import {
 	fetchAdminHousesList,
 } from "@/utils/actions/admin-actions";
 import { adminPageHeading } from "@/utils/websiteData/enums";
-import { House } from "@prisma/client";
-import { TFavorite, THouse, THouseWithImages, TImage } from "@/utils/types";
+import { THouse, TImage } from "@/utils/types";
 import { useEffect, useState } from "react";
 
 type HouseWithImagesAndFavorites = THouse & {
