@@ -19,7 +19,7 @@ export default function FormContainer({
 	useEffect(() => {
 		if (state && state.message) {
 			toast(state.message, {
-				style: { color: "#3d82f6" },
+				style: { color: "#f97316" },
 			});
 		}
 	}, [state]);

@@ -15,7 +15,7 @@ export default function FavoriteToggleButton({
 				<CircleDashed className='text-primary animate-spin' />
 			) : favoriteId ? (
 				<>
-					<Heart className='dark:text-white' fill='red' strokeWidth={0} />
+					<Heart className='dark:text-white' fill='orange' strokeWidth={0} />
 				</>
 			) : (
 				<Heart className='dark:text-white' />

@@ -1,11 +1,11 @@
-import logoImg from "@/public/images/house.png";
+import logoImg from "@/public/images/house.svg";
 import Image from "next/image";
 import Link from "next/link";
 export default function Logo() {
 	return (
 		<div className='md:flex md:items-center  md:gap-12'>
 			<Link className='block' href='/'>
-				<div className='h-28 w-28'>
+				<div className='h-28 w-28  flex items-center justify-end'>
 					<Image
 						src={logoImg}
 						alt='logo'

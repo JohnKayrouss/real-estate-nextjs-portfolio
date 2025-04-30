@@ -7,10 +7,11 @@ import {
 	aboutPageData,
 	linksLabels,
 	linksRoutes,
+	metadataInfo,
 } from "@/utils/websiteData/enums";
 export const metadata: Metadata = {
-	title: appMetadata.defaultTitle("About"),
-	description: appMetadata.defaultDescription(),
+	title: appMetadata.defaultTitle(metadataInfo.ABOUT),
+	description: appMetadata.defaultDescription(metadataInfo.ABOUT_DESCRIPTION),
 };
 
 export default function AboutPage() {
@@ -29,7 +30,7 @@ export default function AboutPage() {
 				<ServiceSection
 					title={aboutPageData.HEADER_TITLE}
 					description={aboutPageData.HEADER_CONTENT}
-					imageUrl={"/images/self-flipped.png"}
+					imageUrl={"/images/self-flipped-second.png"}
 					imageOnLeft={false}
 					contactMe={true}
 				/>

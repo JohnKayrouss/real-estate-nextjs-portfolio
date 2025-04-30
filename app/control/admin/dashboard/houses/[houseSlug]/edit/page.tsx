@@ -1,11 +1,13 @@
 import { adminEditHouse } from "@/utils/actions/admin-actions";
 import EditHouseForm from "./_components/EditHouseForm";
+import { Metadata } from "next";
+import { metadataInfo } from "@/utils/websiteData/enums";
+import { AdminMetadata } from "@/utils/appMetadata";
 
-// type Props = {
-// 	params: Promise<{
-// 		houseSlug: string;
-// 	}>;
-// };
+export const metadata: Metadata = {
+	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_EDIT_HOUSE),
+	description: AdminMetadata.defaultDescription(),
+};
 type Props = {
 	params: Promise<{
 		houseSlug: string;
@@ -14,7 +16,6 @@ type Props = {
 
 export default async function AdminEditProductPage({ params }: Props) {
 	const { houseSlug } = await params;
-	console.log("houseSlug ==== ", houseSlug);
 	const houseInfo = await adminEditHouse(houseSlug);
 	return <EditHouseForm houseInfo={houseInfo} />;
 }

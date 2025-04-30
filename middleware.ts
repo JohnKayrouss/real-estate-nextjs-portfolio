@@ -7,27 +7,20 @@ const isPublicRoute = createRouteMatcher([
 	"/services",
 	"/houses/(.*)",
 	"/houses",
-	"/control/(.*)",
+	"/admin(.*)",
+	"/control/admin/dashboard/(.*)",
 ]);
-// const isAdminRoute = createRouteMatcher(["/control/(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
-	if (!isPublicRoute(req)) {
-		await auth.protect();
+	if (isPublicRoute(req)) {
+		return NextResponse.next(); // Allow public access
 	}
-	// const { userId } = await auth();
-	// const userIsAdmin = userId === process.env.ADMIN_USER_ID;
-
-	// if (!userIsAdmin && isAdminRoute(req)) {
-	// 	return NextResponse.redirect(new URL("/", req.url));
-	// }
+	auth.protect(); // Protect non-public routes
 });
 
 export const config = {
 	matcher: [
-		// Skip Next.js internals and all static files, unless found in search params
-		"/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-		// Always run for API routes
-		"/(api|trpc)(.*)",
+		"/((?!_next/static|_next/image|favicon.ico).*)", // Better static exclusion
+		"/admin(.*)", // Explicit admin route matching
 	],
 };

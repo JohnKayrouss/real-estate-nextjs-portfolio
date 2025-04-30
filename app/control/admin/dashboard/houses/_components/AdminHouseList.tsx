@@ -13,15 +13,19 @@ import { numberWithCommas } from "@/utils/helperFunctions";
 import FormContainer from "@/components/form/FormContainer";
 import { IconButton } from "@/components/form/Buttons";
 import DashboardSectionWrapperWithHeader from "@/components/admin/DashboardSectionWrapperWithHeader";
-import {
-	adminDeleteHouse,
-	fetchAdminHousesList,
-} from "@/utils/actions/admin-actions";
+import { adminDeleteHouse } from "@/utils/actions/admin-actions";
 import { adminPageHeading } from "@/utils/websiteData/enums";
+import { House } from "@prisma/client";
+import { TFavorite, THouse, THouseWithImages, TImage } from "@/utils/types";
 
-export default async function AdminHouseList() {
-	const housesList = await fetchAdminHousesList();
+type HouseWithImagesAndFavorites = THouse & {
+	imagesList: TImage[];
+};
 
+type HousesGridListProps = {
+	housesList: HouseWithImagesAndFavorites[];
+};
+export default function AdminHouseList({ housesList }: HousesGridListProps) {
 	return (
 		<DashboardSectionWrapperWithHeader
 			heading={adminPageHeading.HOUSES}

@@ -12,7 +12,13 @@ import DashboardSectionWrapperWithHeader from "@/components/admin/DashboardSecti
 import Rating from "@/components/Testimonials/Rating";
 import DeleteTestimony from "@/app/user-profile/_components/DeleteTestimony";
 import TestimonyPopup from "./_components/TestimonyPopup";
-import { adminPageHeading } from "@/utils/websiteData/enums";
+import { adminPageHeading, metadataInfo } from "@/utils/websiteData/enums";
+import { Metadata } from "next";
+import { AdminMetadata } from "@/utils/appMetadata";
+export const metadata: Metadata = {
+	title: AdminMetadata.defaultTitle(metadataInfo.ADMIN_TESTIMONIALS),
+	description: AdminMetadata.defaultDescription(),
+};
 export default async function AdminTestimonialsPage() {
 	const testimonialList = await fetchAllTestimonials();
 	return (
