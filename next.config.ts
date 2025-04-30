@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
+	output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
+	images: {
 		remotePatterns: [
 			{
 				protocol: "https",
