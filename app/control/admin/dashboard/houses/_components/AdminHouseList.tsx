@@ -13,19 +13,32 @@ import { numberWithCommas } from "@/utils/helperFunctions";
 import FormContainer from "@/components/form/FormContainer";
 import { IconButton } from "@/components/form/Buttons";
 import DashboardSectionWrapperWithHeader from "@/components/admin/DashboardSectionWrapperWithHeader";
-import { adminDeleteHouse } from "@/utils/actions/admin-actions";
+import {
+	adminDeleteHouse,
+	fetchAdminHousesList,
+} from "@/utils/actions/admin-actions";
 import { adminPageHeading } from "@/utils/websiteData/enums";
 import { House } from "@prisma/client";
 import { TFavorite, THouse, THouseWithImages, TImage } from "@/utils/types";
+import { useEffect, useState } from "react";
 
 type HouseWithImagesAndFavorites = THouse & {
 	imagesList: TImage[];
 };
 
-type HousesGridListProps = {
-	housesList: HouseWithImagesAndFavorites[];
-};
-export default function AdminHouseList({ housesList }: HousesGridListProps) {
+export default function AdminHouseList() {
+	const [housesList, setHouseList] = useState<HouseWithImagesAndFavorites[]>(
+		[]
+	);
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await fetchAdminHousesList();
+			setHouseList(data);
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<DashboardSectionWrapperWithHeader
 			heading={adminPageHeading.HOUSES}
