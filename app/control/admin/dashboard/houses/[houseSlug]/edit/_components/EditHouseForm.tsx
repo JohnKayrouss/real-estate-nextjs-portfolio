@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DashboardSectionWrapperWithHeader from "@/components/admin/DashboardSectionWrapperWithHeader";
 import { SubmitButton } from "@/components/form/Buttons";
 import CloudinaryImagesList from "@/components/form/CloudinaryImagesList";
@@ -10,18 +10,53 @@ import NumberInput from "@/components/form/NumberInput";
 import TextareaInput from "@/components/form/TextareaInput";
 import TextInput from "@/components/form/TextInput";
 import { type THouseWithImages } from "@/utils/types";
-import { adminUpdateHouse } from "@/utils/actions/admin-actions";
+import {
+	adminEditHouse,
+	adminUpdateHouse,
+} from "@/utils/actions/admin-actions";
 import { adminPageHeading } from "@/utils/websiteData/enums";
 type Image = {
 	id: string;
 	url: string;
 	houseId?: string;
 };
-export default function EditHouseForm({
-	houseInfo,
-}: {
-	houseInfo: THouseWithImages;
-}) {
+
+// {
+// 	houseInfo,
+// }: {
+// 	houseInfo: THouseWithImages;
+// }
+export default function EditHouseForm({ houseSlug }: { houseSlug: string }) {
+	const [houseInfo, setHouseInfo] = useState<THouseWithImages>();
+	const [thumbnailUrl, setThumbnailUrl] = useState("");
+	const [thumbnailPublicId, setThumbnailPublicId] = useState("");
+	const [imagesList, setImagesList] = useState<Image[]>([]);
+	useEffect(() => {
+		const getData = async () => {
+			const data = await adminEditHouse(houseSlug);
+			setHouseInfo(data);
+			setThumbnailUrl(data.thumbnail || "");
+			setThumbnailPublicId(data.thumbnailId || "");
+			setImagesList(data.imagesList || []);
+		};
+		getData();
+	}, []);
+
+	const createHouseAction = async (
+		prevState: { message: string },
+		formData: FormData
+	) => {
+		return adminUpdateHouse(
+			prevState,
+			formData,
+			id,
+			thumbnailUrl,
+			thumbnailPublicId,
+			imagesList
+		);
+	};
+	if (!houseInfo) return;
+
 	const {
 		beds,
 		baths,
@@ -37,23 +72,6 @@ export default function EditHouseForm({
 		imagesList: images,
 	} = houseInfo;
 
-	const [thumbnailUrl, setThumbnailUrl] = useState(thumbnail || "");
-	const [thumbnailPublicId, setThumbnailPublicId] = useState(thumbnailId || "");
-	const [imagesList, setImagesList] = useState<Image[]>(images);
-
-	const createHouseAction = async (
-		prevState: { message: string },
-		formData: FormData
-	) => {
-		return adminUpdateHouse(
-			prevState,
-			formData,
-			id,
-			thumbnailUrl,
-			thumbnailPublicId,
-			imagesList
-		);
-	};
 	return (
 		<DashboardSectionWrapperWithHeader
 			heading={adminPageHeading.EDIT_HOUSE}
