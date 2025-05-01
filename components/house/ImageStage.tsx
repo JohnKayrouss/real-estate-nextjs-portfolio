@@ -25,7 +25,7 @@ export default function ImageStage({
 		setCurrentImageOnStage(img);
 	};
 	return (
-		<div className='mt-5 '>
+		<div className='mt-5  overflow-hidden  mx-auto sm:w-full'>
 			<div className='cursor-default'>
 				<Card className='p-0 m-0  rounded-md  h-64 w-[21rem] mx-auto sm:h-80 sm:w-[29rem] md:h-[22rem] md:w-[35rem] lg:h-[28rem] lg:w-[37rem] xl:h-[31rem] xl:w-[40rem]'>
 					<CardContent className='rounded-md h-full w-full p-0 relative  m-0 '>
@@ -41,7 +41,7 @@ export default function ImageStage({
 				</Card>
 			</div>
 			<Separator className='my-2 md:mt-6' />
-			<div className='flex justify-start py-2 whitespace-nowrap overflow-x-auto scrollbar-thin md:justify-center'>
+			<div className='flex justify-start py-2 whitespace-nowrap overflow-x-auto scrollbar-thin md:justify-center '>
 				<div className='flex items-start gap-3 justify-start'>
 					{houseAllImages.map((img, idx) => {
 						return (

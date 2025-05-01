@@ -39,7 +39,7 @@ export default async function SingleHouseDetailsPage({ params }: Props) {
 	}
 	return (
 		houseData && (
-			<main className='px-2 md:px-4  ' suppressHydrationWarning>
+			<main className='px-2 md:px-4' suppressHydrationWarning>
 				<DynamicFavicon url={houseData.thumbnail} />
 				<Breadcrumbing breadcrumbPaths={breadcrumbPaths} />
 				<div className='max-w-6xl mx-auto lg:max-w-4xl'>

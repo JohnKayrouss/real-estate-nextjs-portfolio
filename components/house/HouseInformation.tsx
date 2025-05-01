@@ -33,7 +33,7 @@ export default async function HouseInformation({
 	)[0].info;
 
 	return (
-		<div className='mx-auto flex flex-col items-center mt-5 '>
+		<div className='mx-auto flex flex-col items-center mt-5  w-full overflow-hidden '>
 			{houseDescription && (
 				<div className='w-full h-fit px-2 flex  flex-col gap-2  justify-between items-center py-2'>
 					<div className='flex w-fit gap-x-3 self-end'>
