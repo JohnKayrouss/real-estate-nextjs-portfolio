@@ -53,7 +53,6 @@ export default function AdminCreateHouseForm() {
 						label='Price'
 						placeholder='$'
 						minimumNumber={1}
-						defaultValue={3000000}
 					/>
 				</FormRow>
 				<FormRow className='grid-cols-2 sm:grid-cols-2'>
@@ -61,7 +60,6 @@ export default function AdminCreateHouseForm() {
 						name='estPaymentPerMonth'
 						label='Est. per month'
 						placeholder='$ /mo'
-						defaultValue={3000}
 					/>
 					<NumberInput
 						name='builtYear'
@@ -69,7 +67,6 @@ export default function AdminCreateHouseForm() {
 						placeholder='YYYY'
 						minimumNumber={1700}
 						maximumNumber={new Date().getFullYear()}
-						defaultValue={2020}
 					/>
 				</FormRow>
 				<FormRow className=' grid-cols-1'>
@@ -77,7 +74,6 @@ export default function AdminCreateHouseForm() {
 						name='address'
 						label='address'
 						placeholder='123 St. Anytown, USA 12345'
-						defaultValue={"123 St. Anytown, USA 12345"}
 					/>
 				</FormRow>
 
@@ -96,11 +92,7 @@ export default function AdminCreateHouseForm() {
 					/>
 				</FormRow>
 				<FormRow className='grid-cols-1'>
-					<TextareaInput
-						name='description'
-						label='description'
-						defaultValue='neuiwv bu bu bu 9u hu9 hu hu ih ui hu ih'
-					/>
+					<TextareaInput name='description' label='description' />
 				</FormRow>
 
 				<SubmitButton>Submit</SubmitButton>
