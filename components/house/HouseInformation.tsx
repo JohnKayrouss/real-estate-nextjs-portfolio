@@ -17,7 +17,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import ContacInfoSlider from "../reusable/ContacInfoSlider/ContacInfoSlider";
 import { fetchFavoriteId } from "@/utils/actions/user-actions/user-house-actions";
 import { house } from "@/utils/websiteData/enums";
-
+//testing
 export default async function HouseInformation({
 	houseData,
 }: {
@@ -57,14 +57,14 @@ export default async function HouseInformation({
 					</div>
 				</div>
 			)}
-			<Table className='mb-10 mt-6'>
+			<Table className='mb-10 mt-6 table-fixed'>
 				<TableCaption>
 					Contact us to get the latest and greatest deals!
 				</TableCaption>
 				<TableHeader>
 					<TableRow>
-						<TableHead>Information</TableHead>
-						<TableHead className='text-right'>Details</TableHead>
+						<TableHead className='w-[60px]'>Information</TableHead>
+						<TableHead className='text-right w-[300px]'>Details</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
@@ -72,9 +72,13 @@ export default async function HouseInformation({
 						if (item.title === house.PRICE || item.title === house.DESCRIPTION)
 							return null;
 						return (
-							<TableRow key={idx}>
-								<TableCell>{item.title}</TableCell>
-								<TableCell className='text-right'>{item.info}</TableCell>
+							<TableRow key={idx} className='w-full'>
+								<TableCell className='text-left max-w-[60px] truncate whitespace-nowrap text-ellipsis'>
+									{item.title}
+								</TableCell>
+								<TableCell className='text-right w-[300px] overflow-hidden truncate whitespace-nowrap text-ellipsis'>
+									{item.info}
+								</TableCell>
 							</TableRow>
 						);
 					})}
