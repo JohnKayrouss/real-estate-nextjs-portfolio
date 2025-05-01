@@ -35,12 +35,8 @@ export default async function HouseInformation({
 	return (
 		<div className='mx-auto flex flex-col items-center mt-5 '>
 			{houseDescription && (
-				<div className='w-full px-2 flex  gap-2  justify-between items-center py-2'>
-					<div>
-						<h1 className='text-muted-foreground'>Summary:</h1>
-						<p className='text-sm'>{houseDescription}</p>
-					</div>
-					<div className='flex w-fit gap-x-3  items-center'>
+				<div className='w-full h-fit px-2 flex  flex-col gap-2  justify-between items-center py-2'>
+					<div className='flex w-fit gap-x-3 self-end'>
 						<ContacInfoSlider />
 						{!isSignedIn && <FavoriteSignInButton />}
 						{isSignedIn && (
@@ -54,6 +50,10 @@ export default async function HouseInformation({
 							houseId={houseData.id}
 							houseImg={houseData.thumbnail}
 						/>
+					</div>
+					<div className='my-2'>
+						<h1 className='text-muted-foreground'>Summary:</h1>
+						<p className='text-sm'>{houseDescription}</p>
 					</div>
 				</div>
 			)}
